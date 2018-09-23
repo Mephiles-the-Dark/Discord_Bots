@@ -2,7 +2,7 @@
 It is used to test features or grab information. */
 const config = require('../config.json')
 const owner = config.owner
-module.exports = (bot, msg, args) => {
+module.exports = (client, msg, args) => {
   if (msg.author.id !== owner) return
   try {
     const code = args.join(' ')
