@@ -18,7 +18,7 @@ module.exports = (client, msg, args) => {
         'fields': [
           {
             'name': 'status',
-            'value': "Accepted values for this command are \`online\`, \`idle\`, \`dnd\`, and \`invisible\`.'
+            'value': 'Accepted values for this command are \`online\`, \`idle\`, \`dnd\`, and \`invisible\`.'
           },
           {
             'name': 'type',
