@@ -1,16 +1,27 @@
 const Discord = require("discord.js")
 // require
 // login
-const bot = new Discord.Client()
+const client = new Discord.Client()
 const config = require('./config.json')
-bot.commands = new Discord.Collection()
+client.commands = new Discord.Collection()
 // commands
-bot.commands.set('eval', require('./commands/eval.js'))
-bot.commands.set('help', require('./commands/help.js'))
-bot.commands.set('ping', require('./commands/ping.js'))
+client.commands.set('eval', require('./commands/eval.js'))
+client.commands.set('help', require('./commands/help.js'))
+client.commands.set('ping', require('./commands/ping.js'))
+client.commands.set('say', require('./commands/say.js'))
+client.commands.set('setavatar', require('./commands/setavatar.js'))
+client.commands.set('setnickname', require('./commands/setnickname.js'))
+client.commands.set('setpresence', require('./commands/setpresence.js'))
+client.commands.set('setstatus', require('./commands/setstatus.js'))
+client.commands.set('setusername', require('./commands/setusername.js'))
 // events
-bot.on('message', msg => require('./events/message.js')(bot, msg))
-bot.on('ready', () => require('./events/ready.js')(bot))
+client.on('message', msg => require('./events/message.js')(client, msg))
+client.on('ready', () => require('./events/ready.js')(client))
+client.on('disconnect', () => console.log(`Disconnected at ${new Date()}`))
+client.on('reconnecting', () => console.log(`Reconnecting at ${new Date()}`))
+client.on('debug', (e) => console.error(e.replace(config.token, 'that was redacted')))
+client.on('error', (e) => console.error(e.replace(config.token, 'that was redacted')))
+client.on('warn', (e) => console.error(e.replace(config.token, 'that was redacted')))
 // functions
 
-bot.login(config.token)
+client.login(config.token)
