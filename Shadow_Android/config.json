@@ -2,6 +2,7 @@
   "token": "<Bot_Token>",
   "prefixes": [
     "!",
+    "<@<Bot_Identifier>>",
     "<@!<Bot_Identifier>>"
   ],
   "owner": "<Bot_Owner_Identifier>"
