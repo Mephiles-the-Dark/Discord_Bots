@@ -1,6 +1,6 @@
 const config = require('../config.json')
 // required for events
-module.exports = async (bot, msg) => {
+module.exports = async (client, msg) => {
   if (msg.author.bot) return
   if (msg.guild) {
     if (!msg.guild.available) return
@@ -13,7 +13,7 @@ module.exports = async (bot, msg) => {
   }
   if (!prefix) return
   if (prefix === prefixes[1] || prefix === prefixes[2]) {
-    if (msg.content.length > (bot.user.tag.toString().length + 4) || msg.content.length > 21) {
+    if (msg.content.length > (client.user.tag.toString().length + 4) || msg.content.length > 21) {
       // The 21 is the length of the mention by identifier (prefixes[1]).
       if (msg.content.split(/ +/g).some(than)) {
         return msg.reply('do not mention it.')
@@ -25,7 +25,7 @@ module.exports = async (bot, msg) => {
   let cmd = args.shift().toLowerCase()
   // Adds a reaction to get emojis put a forward slash, \, before it.
   if (msg.guild) {
-    if (msg.guild.me.hasPermission('ADD_REACTIONS')) {
+    if (msg.guild.me.hasPermission('ADD_REACTIONS') || msg.guild.me.hasPermission('ADMINISTRATOR')) {
       if (args.some(faker)) {
         await msg.react('🇫')
         await msg.react('🇦')
@@ -38,7 +38,7 @@ module.exports = async (bot, msg) => {
   // commands
   if (prefix === config.prefixes[0]) {
     if (bot.commands.has(cmd)) {
-      bot.commands.get(cmd)(bot, msg, args)
+      client.commands.get(cmd)(client, msg, args)
     }
   }
 }
