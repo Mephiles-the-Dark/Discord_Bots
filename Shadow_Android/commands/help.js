@@ -47,7 +47,7 @@ module.exports = (client, msg, args) => {
         'color': 4934215,
         'timestamp': '2018-09-21T01:40:32.930Z',
         'footer': {
-          'icon_url': 'https://storage.googleapis.com/multi-static-content/thumbs/artage-io-thumb-d073ad938b75005ddbde8a364ceb3ca5.png,
+          'icon_url': 'https://storage.googleapis.com/multi-static-content/thumbs/artage-io-thumb-d073ad938b75005ddbde8a364ceb3ca5.png',
           'text': 'Do not join my server, Кома́нда.'
         },
         'thumbnail': {
