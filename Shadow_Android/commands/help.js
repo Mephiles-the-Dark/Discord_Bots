@@ -43,7 +43,7 @@ module.exports = (client, msg, args) => {
     msg.author.send({
       embed: {
         'title': 'List of Commands',
-        'description': `Use ${real.prefixes[0]}[command] without the brackets.  Commands are case insensitive.`,
+        'description': `Use ${config.prefixes[0]}[command] without the brackets.  Commands are case insensitive.`,
         'color': 4934215,
         'timestamp': '2018-09-21T01:40:32.930Z',
         'footer': {
@@ -68,7 +68,7 @@ module.exports = (client, msg, args) => {
           },
           {
             'name': 'say',
-            'value': 'The bot posts what it was said to post and then attempts to delete the author's message.'
+            'value': "The bot posts what it was said to post and then attempts to delete the author's message."
           },
           {
             'name': 'setavatar',
