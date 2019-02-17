@@ -21,8 +21,8 @@ module.exports = async (client, msg) => {
     }
     return msg.reply(`Prefix is ${config.prefixes[0]}, use: \`${config.prefixes[0]}help\`.`)
   }
-  let args = msg.content.slice(prefix.length).trim().split(/ +/g)
-  let cmd = args.shift().toLowerCase()
+  let cmd = msg.content.toLowerCase().split(/\s+/g)[0].slice(prefix.length);
+  let args = msg.content.slice(prefix.length+cmd.length).trim().split(/ +/g);
   // Adds a reaction to get emojis put a forward slash, \, before it.
   if (msg.guild) {
     if (msg.guild.me.hasPermission('ADD_REACTIONS') || msg.guild.me.hasPermission('ADMINISTRATOR')) {
