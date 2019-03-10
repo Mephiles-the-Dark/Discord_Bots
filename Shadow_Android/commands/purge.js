@@ -1,5 +1,5 @@
 module.exports = async (client, msg, args) => {
-    if(msg.member.hasPermission('MANAGE_MESSAGES') || msg.mentions.users.first().id === client.id || msg.mentions.users.first().id === author.id) {
+    if(msg.member.hasPermission('MANAGE_MESSAGES') || msg.mentions.users.first().id === client.user.id || msg.mentions.users.first().id === msg.author.id) {
         const user = msg.mentions.users.first()
         const amount = !!parseInt(msg.content.split(' ')[1]) ? parseInt(msg.content.split(' ')[1]) : parseInt(msg.content.split(' ')[2])
 	if (!amount || (amount < 0)) return msg.reply('Must specify an amount to delete!')
