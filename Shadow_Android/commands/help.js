@@ -67,6 +67,10 @@ module.exports = (client, msg, args) => {
             'value': 'Returns pong with latency.'
           },
           {
+            "name": "purge",
+            "value": "Deletes messages if the user has the permission.  Usage: `[purge] 2 @mention`"
+          },
+          {
             'name': 'say',
             'value': "The bot posts what it was said to post and then attempts to delete the author's message."
           },
