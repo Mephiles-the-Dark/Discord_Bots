@@ -10,6 +10,7 @@ client.commands.set('help', require('./commands/help.js'))
 client.commands.set('ping', require('./commands/ping.js'))
 client.commands.set('purge', require('./commands/purge.js'))
 client.commands.set('say', require('./commands/say.js'))
+client.commands.set('screenshare', require('./commands/screenshare.js'));
 client.commands.set('setavatar', require('./commands/setavatar.js'))
 client.commands.set('setnickname', require('./commands/setnickname.js'))
 client.commands.set('setpresence', require('./commands/setpresence.js'))
