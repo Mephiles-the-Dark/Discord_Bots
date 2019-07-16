@@ -75,6 +75,10 @@ module.exports = (client, msg, args) => {
             'value': "The bot posts what it was said to post and then attempts to delete the author's message."
           },
           {
+            "name": "screenshare",
+            "value": "Use when in a voice channel to get a link that when used makes screensharing available."
+          },
+          {
             'name': 'setavatar',
             'value': 'Sets the avatar of the bot using the first message attachment.  Rate limit for changing avatars is thrice per hour.'
           },
