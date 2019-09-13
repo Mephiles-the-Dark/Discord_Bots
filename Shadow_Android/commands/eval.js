@@ -11,7 +11,7 @@ module.exports = (client, msg, args) => {
       evaled = require('util').inspect(evaled)
     msg.channel.send(clean(evaled), { code: 'x1' })
   } catch (err) {
-    msg.channel.send(`\`ERROR\` \`\`\`x1\n$[clean(err)}\n\`\`\``)
+    msg.channel.send(`\`ERROR\` \`\`\`x1\n${clean(err)}\n\`\`\``)
   }
 }
 function clean(text) {
